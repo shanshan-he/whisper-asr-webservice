@@ -16,7 +16,7 @@ model_path = os.getenv("ASR_MODEL_PATH", os.path.join(os.path.expanduser("~"), "
 #   https://opennmt.net/CTranslate2/quantization.html
 if torch.cuda.is_available():
     device = "cuda"
-    model_quantization = os.getenv("ASR_QUANTIZATION", "float32")
+    model_quantization = os.getenv("ASR_QUANTIZATION", "float16")
 else:
     device = "cpu"
     model_quantization = os.getenv("ASR_QUANTIZATION", "int8")
